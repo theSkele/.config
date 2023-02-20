@@ -1,0 +1,16 @@
+#!/bin/bash
+OUTPUT=$(protonvpn s)
+DISCONNECTED='Status:     Disconnected'
+if [[ $(echo "$OUTPUT" | grep "Status:") == "$DISCONNECTED" ]]
+then
+    echo " NOT RUNNING"
+    echo " NOT RUNNING"
+    echo "#cd465b"
+else 
+    IP=$(echo "$OUTPUT" | grep "IP:" | awk '{printf $2}')
+    SERVER=$(echo "$OUTPUT" | grep "Server:" | awk '{printf $2}')
+    LOAD=$(echo "$OUTPUT" | grep "Load:" | awk '{printf $2}')
+    
+    echo "$IP:$SERVER [$LOAD]"
+    echo "$SERVER"
+fi

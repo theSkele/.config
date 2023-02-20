@@ -1,0 +1,6 @@
+#!/bin/bash
+DEV=$(bluetoothctl devices Connected | cut -f2 -d' ' | while read uuid; do bluetoothctl info $uuid; done| grep -e "Name" | cut -d: -f2-);
+if [ "$DEV" == "" ]; then
+DEV="Built-in Speakers";
+fi;
+echo $DEV;
