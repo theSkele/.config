@@ -1,0 +1,9 @@
+[user]
+	email = 55523096+theSkele@users.noreply.github.com
+	name = theSkele
+[core]
+	editor = nano
+[init]
+	defaultBranch = main
+[credential]
+	helper = /usr/lib/git-core/git-credential-libsecret
